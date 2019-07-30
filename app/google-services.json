@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "273710294919",
+    "firebase_url": "https://boardme-mad-app.firebaseio.com",
+    "project_id": "boardme-mad-app",
+    "storage_bucket": "boardme-mad-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273710294919:android:30ad54dcc22c222d",
+        "android_client_info": {
+          "package_name": "com.sliit.mad.boardme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273710294919-9scnb0gfmphers8b9nrpm72loo07tqff.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sliit.mad.boardme",
+            "certificate_hash": "c12cf4871a14379fb79359e0d4524a4870e5f98c"
+          }
+        },
+        {
+          "client_id": "273710294919-45j4f726q82rm1qi4ohg2shoktdhrp8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8BQbTdQP_JUW4TJtbQKamUEsmxw8PEIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273710294919-45j4f726q82rm1qi4ohg2shoktdhrp8i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

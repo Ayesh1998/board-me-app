@@ -7,28 +7,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class VerifySignUp extends AppCompatActivity {
 
-    Button signIn,signUp;
+    Button btVerify;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_verify_sign_up);
 
-        signUp = (Button)findViewById(R.id.bSignUp);
+        btVerify = (Button) findViewById(R.id.btSignin);
 
-        signUp.setOnClickListener(new View.OnClickListener() {
+        btVerify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent goActitviySignUp = new Intent(MainActivity.this, com.sliit.mad.boardme.SignUp.class);
-                startActivity(goActitviySignUp);
+                Intent goActitviyLogin = new Intent(VerifySignUp.this, com.sliit.mad.boardme.MainActivity.class);
+                startActivity(goActitviyLogin);
             }
         });
-
     }
-
-
-
 }

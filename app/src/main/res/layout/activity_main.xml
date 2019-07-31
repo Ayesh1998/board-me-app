@@ -55,8 +55,9 @@
         android:hint="@string/Email"
         android:inputType="textEmailAddress"
         android:padding="10dp"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textSize="20sp"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvHaveAccount" />
@@ -73,15 +74,16 @@
         android:hint="@string/Password"
         android:inputType="textPassword"
         android:padding="10dp"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textSize="20sp"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
     <Button
-        android:id="@+id/bSignin"
+        android:id="@+id/btSignin"
         android:layout_width="186dp"
         android:layout_height="50dp"
         android:layout_marginTop="29dp"
@@ -96,22 +98,22 @@
 
     <TextView
         android:id="@+id/tvNeedAccount"
-        android:layout_width="202dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="138dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="44dp"
         android:text="@string/Needanaccount"
         android:textAlignment="center"
-        android:textColor="#E1242424"
+        android:textColor="#E1FCFBFB"
         android:textSize="18sp"
         android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bSignin" />
+        app:layout_constraintTop_toBottomOf="@+id/btSignin" />
 
     <Button
         android:id="@+id/bSignUp"
-        android:layout_width="0dp"
-        android:layout_height="46dp"
+        android:layout_width="186dp"
+        android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
@@ -122,6 +124,6 @@
         android:textSize="21sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvNeedAccount"
-        app:layout_constraintTop_toBottomOf="@+id/bSignin" />
+        app:layout_constraintTop_toBottomOf="@+id/btSignin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

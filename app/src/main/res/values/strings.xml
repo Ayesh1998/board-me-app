@@ -7,5 +7,18 @@
     <string name="Alreadyhaveanaccount">Already have an account</string>
     <string name="SignUp">SignUp</string>
     <string name="Needanaccount">Need an account</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="telephone">Telephone</string>
+    <string name="check_your_email_inbox">Check your email inbox</string>
+    <string name="verify_your_email_to_signin">Verify Your Email to SIGNIN</string>
 
+    <string-array name="users">
+        <item>Parent</item>
+        <item>Student</item>
+        <item>Owner</item>
+    </string-array>
 </resources>

@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">BoardMe</string>
+    <string name="BoardMe">BoardMe</string>
+    <string name="SignIn">SignIn</string>
+    <string name="Password">Password</string>
+    <string name="Email">Email</string>
+    <string name="Alreadyhaveanaccount">Already have an account</string>
+    <string name="SignUp">SignUp</string>
+    <string name="Needanaccount">Need an account</string>
+
 </resources>

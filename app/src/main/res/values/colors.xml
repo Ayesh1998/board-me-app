@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#0C34A5</color>
     <color name="colorAccent">#45EC08</color>
     <color name="progress">#113B80</color>
+    <color name="price">#4E393A</color>
 </resources>

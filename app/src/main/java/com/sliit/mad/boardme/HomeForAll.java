@@ -89,7 +89,10 @@ class  PropertyHolder1 extends  RecyclerView.ViewHolder{
 
     public void setImages(Context ctx,String t){
         ImageView homeCardImage1 = (ImageView) mView.findViewById(R.id.homeCardImage);
-        Picasso.with(ctx).load(t).into(homeCardImage1);
+//        Picasso.with(ctx).load(t).into(homeCardImage1);
+        Picasso.with(ctx)
+                .load(t)
+                .into(homeCardImage1);
     }
 
 

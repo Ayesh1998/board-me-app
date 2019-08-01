@@ -66,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
                                 if (task.isSuccessful()){
                                     pr.setVisibility(View.GONE);
                                     Toast.makeText(MainActivity.this, "Login Succefull", Toast.LENGTH_LONG).show();
+                                    Intent goActitviyHome = new Intent(MainActivity.this, HomeForAll.class);
+                                    startActivity(goActitviyHome);
                                 }
                                 else{
                                     pr.setVisibility(View.GONE);

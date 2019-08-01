@@ -136,13 +136,26 @@ public class SignUp extends AppCompatActivity {
 
                                             pgb.setVisibility(View.GONE);
 
-                                            firebaseAuthe.getCurrentUser().sendEmailVerification();
-                                            Toast.makeText(SignUp.this, "Registration Successfull and Email Verification Sent", Toast.LENGTH_LONG).show();
+                                            firebaseAuthe.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+
+                                                    if ( !(task.isSuccessful())){
+                                                        Toast.makeText(SignUp.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                                    }
+                                                    else{
+                                                        Toast.makeText(SignUp.this, "Registration Successfull and Email Verification Sent", Toast.LENGTH_LONG).show();
+                                                        Intent goActitviyVerify = new Intent(SignUp.this, VerifySignUp.class);
+                                                        startActivity(goActitviyVerify);
+                                                    }
+
+                                                }
+                                            });
 
 
 
-                                            Intent goActitviyVerify = new Intent(SignUp.this, com.sliit.mad.boardme.VerifySignUp.class);
-                                            startActivity(goActitviyVerify);
+
+
                                         }
                                     });
 

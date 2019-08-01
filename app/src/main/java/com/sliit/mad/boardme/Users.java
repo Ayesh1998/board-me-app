@@ -1,7 +1,7 @@
 package com.sliit.mad.boardme;
 
 public class Users {
-    private  String type,firstName, lastName, email,telephone;
+      String type,firstName, lastName, email,telephone;
 
     public Users(){
 

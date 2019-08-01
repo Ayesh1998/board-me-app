@@ -15,6 +15,12 @@
     <string name="telephone">Telephone</string>
     <string name="check_your_email_inbox">Check your email inbox</string>
     <string name="verify_your_email_to_signin">Verify Your Email to SIGNIN</string>
+    <string name="bathrooms">Bathrooms:</string>
+    <string name="price">Price :</string>
+
+    <string name="textview">TextView</string>
+    <string name="rooms1">Rooms</string>
+    <string name="rooms" />
 
     <string-array name="users">
         <item>Parent</item>

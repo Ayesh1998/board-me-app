@@ -5,4 +5,6 @@
     <color name="colorAccent">#45EC08</color>
     <color name="progress">#113B80</color>
     <color name="price">#4E393A</color>
+    <color name="nav_head">#ACE7E2</color>
+    <color name="nav_lower_part">#7A8383</color>
 </resources>

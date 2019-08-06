@@ -1,23 +1,34 @@
 package com.sliit.mad.boardme;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
-public class HomeForAll extends AppCompatActivity {
+public class HomeForAll extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    //drawer
+    DrawerLayout drawer;
+    ActionBarDrawerToggle drawerToggle;
+    //drawer
 
     RecyclerView boardingList;
     DatabaseReference proprtiesReferance;
@@ -27,6 +38,19 @@ public class HomeForAll extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_for_all);
 
+        //drawer
+        drawer = (DrawerLayout)findViewById(R.id.drawer);
+        drawerToggle = new ActionBarDrawerToggle(this,drawer,R.string.open,R.string.close);
+        drawer.addDrawerListener(drawerToggle);
+        drawerToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        NavigationView navigationView = (NavigationView)findViewById(R.id.navVieww);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        //drawer
+
+
         proprtiesReferance = FirebaseDatabase.getInstance().getReference().child("Properties");
         proprtiesReferance.keepSynced(true);
 
@@ -35,7 +59,33 @@ public class HomeForAll extends AppCompatActivity {
         boardingList.setLayoutManager(new LinearLayoutManager(this));
 
 
+
+
     }
+
+    //drawer
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(drawerToggle.onOptionsItemSelected(item)){
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+        int id = menuItem.getItemId();
+
+        if(id == R.id.nav_enter_profile){
+
+
+            Intent goActitviyVerify = new Intent(HomeForAll.this, VerifySignUp.class);
+            startActivity(goActitviyVerify);
+        }
+        return false;
+    }
+    //drawer
 
     @Override
     protected void onStart() {
@@ -59,6 +109,8 @@ public class HomeForAll extends AppCompatActivity {
 
 
     }
+
+
 }
 
 class  PropertyHolder1 extends  RecyclerView.ViewHolder{

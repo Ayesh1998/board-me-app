@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+     <item
+    android:id="@+id/nav_enter_profile"
+    android:title="@string/my_profile" />
+
+    <item
+        android:id="@+id/nav_enter_bookigs"
+        android:title="@string/bookings" />
+
+    <item
+        android:id="@+id/nav_enter_qa"
+        android:title="@string/q_amp_a" />
+
+    <item
+        android:id="@+id/nav_enter_aboutus"
+        android:title="@string/about_us" />
+
+    <item
+        android:id="@+id/nav_logOut"
+        android:title="@string/log_out" />
+</menu>

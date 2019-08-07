@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         pr = (ProgressBar) findViewById(R.id.progressBar2) ;
         pr.setVisibility(View.GONE);
 
-//    testing
+//    testings
 
 
 

@@ -30,6 +30,11 @@
     <string name="close">Close</string>
     <string name="todo">TODO</string>
     <string name="profile">Profile</string>
+    <string name="editProperty">Edit</string>
+    <string name="deleteSingleProperty">Delete</string>
+    <string name="proprtyimage">ProprtyImage</string>
+    <string name="booknow">BookNow</string>
+
 
     <string-array name="users">
         <item>Parent</item>

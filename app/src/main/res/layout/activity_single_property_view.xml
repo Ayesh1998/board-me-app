@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".HomeForAll">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/siglePropery_Linear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".SinglePropertyView">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/single_property_edit"
+                android:layout_width="85dp"
+                android:layout_height="33dp"
+                android:layout_marginBottom="8dp"
+                android:clickable="true"
+                android:text="@string/editProperty"
+                android:textAlignment="center"
+                android:textColor="@color/pureBlack"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/singlePropertyImageView"
+                app:layout_constraintEnd_toStartOf="@+id/single_property_propertyImage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/single_property_propertyImage"
+                android:layout_width="29dp"
+                android:layout_height="33dp"
+                android:layout_marginEnd="113dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/singlePropertyImageView"
+                app:layout_constraintEnd_toStartOf="@+id/single_property_delete"
+                app:layout_constraintStart_toEndOf="@+id/single_property_edit"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/editproprty" />
+
+            <TextView
+                android:id="@+id/single_property_delete"
+                android:layout_width="95dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="104dp"
+                android:layout_marginBottom="8dp"
+                android:clickable="true"
+                android:text="@string/deleteSingleProperty"
+                android:textAlignment="center"
+                android:textColor="@color/pureBlack"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/singlePropertyImageView"
+                app:layout_constraintStart_toEndOf="@+id/single_property_propertyImage"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="41dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="9dp"
+                android:paddingBottom="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/singlePropertyImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/single_property_delete"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.958"
+                app:srcCompat="@drawable/deletesingleproperty" />
+
+            <ImageView
+                android:id="@+id/singlePropertyImageView"
+                android:layout_width="359dp"
+                android:layout_height="204dp"
+                android:layout_marginTop="56dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/proprtyimage"
+                android:foregroundGravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.307"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/singlePropertyViewTitle"
+                android:layout_width="349dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:paddingLeft="20dp"
+                android:text="@string/textview"
+                android:textAlignment="textStart"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/singlePropertyImageView" />
+
+            <TextView
+                android:id="@+id/singlePropertyViewPhone"
+                android:layout_width="143dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginBottom="52dp"
+                android:paddingLeft="20dp"
+                android:text="@string/textview"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/singlePropertyViewPrice" />
+
+            <TextView
+                android:id="@+id/singlePropertyViewPrice"
+                android:layout_width="326dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="32dp"
+                android:paddingLeft="20dp"
+                android:text="@string/textview"
+                android:textAlignment="textStart"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/singlePropertyViewAddress" />
+
+            <TextView
+                android:id="@+id/singlePropertyViewBathrooms"
+                android:layout_width="161dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="28dp"
+                android:layout_marginBottom="8dp"
+                android:paddingLeft="20dp"
+                android:text="@string/textview"
+                android:textAlignment="textStart"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/singlePropertyViewAddress"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/singlePropertyViewTitle"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/singlePropertyViewRooms"
+                android:layout_width="161dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:paddingLeft="20dp"
+                android:text="@string/textview"
+                android:textAlignment="textStart"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/singlePropertyViewAddress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/singlePropertyViewTitle"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/singlePropertyViewAddress"
+                android:layout_width="326dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="56dp"
+                android:layout_marginEnd="32dp"
+                android:paddingLeft="20dp"
+                android:text="@string/textview"
+                android:textAlignment="textStart"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/singlePropertyViewPrice"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/singlePropertyViewTitle" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="62dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginBottom="28dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/singlePropertyViewPhone"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_local_phone"
+                tools:ignore="VectorDrawableCompat" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navVieww"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/nav_lower_part"
+        app:headerLayout="@layout/nav_header"
+
+        app:menu="@menu/nav_menu_list">
+
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>

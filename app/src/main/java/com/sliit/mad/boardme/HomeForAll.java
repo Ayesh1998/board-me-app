@@ -119,8 +119,8 @@ public class HomeForAll extends AppCompatActivity implements NavigationView.OnNa
         if (id == R.id.nav_enter_profile) {
 
 
-//            Intent navMenu = new Intent(HomeForAll.this, SinglePropertyView.class);
-//            startActivity(navMenu);
+            Intent navMenu = new Intent(HomeForAll.this, BookNow.class);
+            startActivity(navMenu);
 
         } else if (id == R.id.nav_enter_bookigs) {
 

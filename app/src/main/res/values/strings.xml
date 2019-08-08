@@ -34,6 +34,10 @@
     <string name="deleteSingleProperty">Delete</string>
     <string name="proprtyimage">ProprtyImage</string>
     <string name="booknow">BookNow</string>
+    <string name="book_now">Book Now</string>
+    <string name="description">Description</string>
+    <string name="book_now_button">BOOK NOW</string>
+    <string name="advance">Advance</string>
 
 
     <string-array name="users">

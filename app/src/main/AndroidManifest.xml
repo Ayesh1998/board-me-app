@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".StuParentPropertySingleView"></activity>
+        <activity android:name=".BookNow"></activity>
+        <activity android:name=".StuParentPropertySingleView" />
         <activity android:name=".SinglePropertyView" />
         <activity android:name=".HomeForAll" />
         <activity android:name=".VerifySignUp" />

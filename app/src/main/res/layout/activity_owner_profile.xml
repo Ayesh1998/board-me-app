@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/background"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="115dp">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="88dp"
+                android:layout_height="76dp"
+                android:layout_marginEnd="13dp"
+                android:contentDescription="@string/profilephoto"
+                android:src="@drawable/ic_account_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tvstudentname"
+                app:layout_constraintHorizontal_bias="0.571"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvstudentname"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/textview"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvstudent-prof"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/textview"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvstudentname" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="217dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/textview"
+            android:textSize="24sp"
+            android:textColor="@color/book_now_color"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvemail"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tele"
+            android:layout_width="217dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/textview"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvtele"
+            app:layout_constraintTop_toBottomOf="@+id/email" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="217dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/textview"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvaddress"
+            app:layout_constraintTop_toBottomOf="@+id/tele" />
+
+        <TextView
+            android:id="@+id/tvtele"
+            android:layout_width="136dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/telephone"
+            android:textColor="@color/book_now_color"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvemail" />
+
+        <TextView
+            android:id="@+id/tvemail"
+            android:layout_width="136dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:text="@string/email"
+            android:textColor="@color/book_now_color"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvaddress"
+            android:layout_width="136dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/address"
+            android:textColor="@color/book_now_color"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvtele" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="56dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            app:layout_constraintBottom_toTopOf="@+id/btMyBoardingPlaces"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvaddress"
+            app:srcCompat="@drawable/ic_edit_profile" />
+
+        <Button
+            android:id="@+id/btMyBoardingPlaces"
+            android:layout_width="370dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="63dp"
+            android:background="@drawable/onwer_profile_buttons"
+            android:text="@string/my_boarding_places"
+            android:textColor="#E1333335"
+            android:textSize="21sp"
+
+            android:typeface="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/address" />
+
+        <Button
+            android:id="@+id/btBooking"
+            android:layout_width="370dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/onwer_profile_buttons"
+            android:text="@string/booking_requests"
+            android:textColor="#E1333335"
+            android:textSize="21sp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btAddBoarding" />
+
+        <Button
+            android:id="@+id/btAddBoarding"
+            android:layout_width="370dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/onwer_profile_buttons"
+            android:text="@string/add_a_boarding"
+            android:textColor="#E1333335"
+
+            android:textSize="21sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btMyBoardingPlaces" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
+
+
+
+
+
+

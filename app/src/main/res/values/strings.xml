@@ -17,8 +17,6 @@
     <string name="verify_your_email_to_signin">Verify Your Email to SIGNIN</string>
     <string name="bathrooms">Bathrooms:</string>
     <string name="price">Price :</string>
-
-    <string name="textview">TextView</string>
     <string name="rooms1">Rooms</string>
     <string name="rooms" />
     <string name="my_profile">\u0020\u0020My Profile</string>
@@ -38,6 +36,13 @@
     <string name="description">Description</string>
     <string name="book_now_button">BOOK NOW</string>
     <string name="advance">Advance</string>
+    <string name="address">Address</string>
+    <string name="my_bookings">My Bookings</string>
+    <string name="profilephoto">ProfilePhoto</string>
+    <string name="textview">TextView</string>
+    <string name="my_boarding_places">My Boarding Places</string>
+    <string name="add_a_boarding">Add a Boarding</string>
+    <string name="booking_requests">Booking Requests</string>
 
 
     <string-array name="users">

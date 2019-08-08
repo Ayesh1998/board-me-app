@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -12,8 +13,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class OwnerProfile extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+public class StuParentHome extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     //drawer
     DrawerLayout drawer;
@@ -21,9 +21,9 @@ public class OwnerProfile extends AppCompatActivity implements NavigationView.On
     //drawer
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)  {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_owner_profile);
+        setContentView(R.layout.activity_stu_parent_home);
 
         //drawer
         drawer = (DrawerLayout) findViewById(R.id.drawer);
@@ -36,7 +36,6 @@ public class OwnerProfile extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         //drawer
-
     }
 
     //drawer
@@ -56,8 +55,8 @@ public class OwnerProfile extends AppCompatActivity implements NavigationView.On
         if (id == R.id.nav_enter_profile) {
 
 
-//            Intent navMenu = new Intent(HomeForAll.this, SinglePropertyView.class);
-//            startActivity(navMenu);
+            Intent navMenu = new Intent(StuParentHome.this, StuParentHome.class);
+            startActivity(navMenu);
 
         } else if (id == R.id.nav_enter_bookigs) {
 
@@ -69,4 +68,5 @@ public class OwnerProfile extends AppCompatActivity implements NavigationView.On
         return false;
     }
     //drawer
+
 }

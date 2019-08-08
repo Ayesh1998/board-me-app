@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".HomeForAll">
+
+<LinearLayout
     android:layout_width="match_parent"
     android:background="@drawable/background"
     android:layout_height="match_parent"
@@ -165,7 +172,7 @@
 
         <Button
             android:id="@+id/btMyBoardingPlaces"
-            android:layout_width="370dp"
+            android:layout_width="match_parent"
             android:layout_height="41dp"
             android:layout_marginTop="63dp"
             android:background="@drawable/onwer_profile_buttons"
@@ -181,7 +188,7 @@
 
         <Button
             android:id="@+id/btBooking"
-            android:layout_width="370dp"
+            android:layout_width="match_parent"
             android:layout_height="41dp"
             android:layout_marginTop="60dp"
             android:background="@drawable/onwer_profile_buttons"
@@ -196,7 +203,7 @@
 
         <Button
             android:id="@+id/btAddBoarding"
-            android:layout_width="370dp"
+            android:layout_width="match_parent"
             android:layout_height="41dp"
             android:layout_marginTop="60dp"
             android:background="@drawable/onwer_profile_buttons"
@@ -213,6 +220,22 @@
 
 </LinearLayout>
 
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navVieww"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/nav_lower_part"
+        app:headerLayout="@layout/nav_header"
+
+        app:menu="@menu/nav_menu_list">
+
+
+    </com.google.android.material.navigation.NavigationView>
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
 
 
 

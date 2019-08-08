@@ -86,7 +86,7 @@ public class HomeForAll extends AppCompatActivity implements NavigationView.OnNa
                 propertyHolder1.mView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-//                        Toast.makeText(HomeForAll.this, property_key, Toast.LENGTH_SHORT).show();
+//                       Toast.makeText(HomeForAll.this, property_key, Toast.LENGTH_SHORT).show();
 
                         Intent sigleProperty = new Intent(HomeForAll.this, SinglePropertyView.class);
                         sigleProperty.putExtra("keyValue", property_key);
@@ -127,6 +127,11 @@ public class HomeForAll extends AppCompatActivity implements NavigationView.OnNa
 
 //            Intent navMenu2 = new Intent(HomeForAll.this, StuParentPropertySingleView.class);
 //            startActivity(navMenu2);
+        }else if (id == R.id.nav_enter_aboutus) {
+
+
+            Intent navMenu = new Intent(HomeForAll.this, AboutUs.class);
+             startActivity(navMenu);
         }
 
         return false;

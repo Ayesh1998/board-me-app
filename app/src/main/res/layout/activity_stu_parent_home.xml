@@ -164,18 +164,21 @@
                 android:layout_marginTop="170dp"
                 android:layout_marginEnd="44dp"
                 android:clickable="true"
-                app:layout_constraintBottom_toTopOf="@+id/drawer"
+
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@drawable/ic_edit_profile"
-                tools:ignore="VectorDrawableCompat" />
+                tools:ignore="NotSibling,VectorDrawableCompat" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="415dp"
+                android:id="@+id/stu_par_bookigRecycle"
+                android:layout_width="match_parent"
                 android:layout_height="240dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -195,6 +198,7 @@
         android:layout_gravity="start"
         android:background="@color/nav_lower_part"
         app:headerLayout="@layout/nav_header"
+        app:itemTextColor="@color/nav_menu_color"
 
         app:menu="@menu/nav_menu_list">
 

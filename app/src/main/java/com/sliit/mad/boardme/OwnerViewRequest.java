@@ -11,7 +11,8 @@ import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class OwnerProfile extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class OwnerViewRequest extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+
 
     //drawer
     DrawerLayout drawer;
@@ -21,7 +22,7 @@ public class OwnerProfile extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_owner_profile);
+        setContentView(R.layout.activity_owner_view_request);
 
         //drawer
         drawer = (DrawerLayout) findViewById(R.id.drawer);
@@ -34,7 +35,6 @@ public class OwnerProfile extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         //drawer
-
 
     }
 
@@ -55,7 +55,7 @@ public class OwnerProfile extends AppCompatActivity implements NavigationView.On
         if (id == R.id.nav_enter_profile) {
 
 
-            Intent navMenu = new Intent(OwnerProfile.this, StuParentHome.class);
+            Intent navMenu = new Intent(OwnerViewRequest.this, OwnerProfile.class);
             startActivity(navMenu);
 
         } else if (id == R.id.nav_enter_bookigs) {
@@ -66,12 +66,11 @@ public class OwnerProfile extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_enter_aboutus) {
 
 
-            Intent navMenu = new Intent(OwnerProfile.this, AboutUs.class);
+            Intent navMenu = new Intent(OwnerViewRequest.this, AboutUs.class);
             startActivity(navMenu);
         }
 
         return false;
     }
     //drawer
-
 }

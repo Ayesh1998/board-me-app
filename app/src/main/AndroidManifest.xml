@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".AboutUs"/>
+        <activity android:name=".OwnerViewRequest"></activity>
+        <activity android:name=".AboutUs" />
         <activity android:name=".OwnerProfile" />
         <activity android:name=".BookNow" />
         <activity android:name=".StuParentPropertySingleView" />
@@ -24,7 +25,8 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter></activity>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

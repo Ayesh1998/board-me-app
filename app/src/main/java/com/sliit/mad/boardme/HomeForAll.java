@@ -120,14 +120,15 @@ public class HomeForAll extends AppCompatActivity implements NavigationView.OnNa
         if (id == R.id.nav_enter_profile) {
 
 
-            Intent navMenu = new Intent(HomeForAll.this, StuParentHome.class);
+            Intent navMenu = new Intent(HomeForAll.this, OwnerProfile.class);
             startActivity(navMenu);
 
         } else if (id == R.id.nav_enter_bookigs) {
 
 
-//            Intent navMenu2 = new Intent(HomeForAll.this, StuParentPropertySingleView.class);
-//            startActivity(navMenu2);
+            Intent navMenu2 = new Intent(HomeForAll.this, OwnerViewRequest.class);
+            startActivity(navMenu2);
+
         } else if (id == R.id.nav_enter_aboutus) {
 
 

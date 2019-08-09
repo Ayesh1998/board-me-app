@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +21,8 @@ public class StuParentHome extends AppCompatActivity implements NavigationView.O
     DrawerLayout drawer;
     ActionBarDrawerToggle drawerToggle;
     //drawer
+
+    RecyclerView boardingList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,10 @@ public class StuParentHome extends AppCompatActivity implements NavigationView.O
         navigationView.setNavigationItemSelectedListener(this);
 
         //drawer
+
+        boardingList = (RecyclerView) findViewById(R.id.stu_par_bookigRecycle);
+        boardingList.setHasFixedSize(true);
+        boardingList.setLayoutManager(new LinearLayoutManager(this));
     }
 
     //drawer
@@ -55,7 +63,7 @@ public class StuParentHome extends AppCompatActivity implements NavigationView.O
         if (id == R.id.nav_enter_profile) {
 
 
-            Intent navMenu = new Intent(StuParentHome.this, StuParentHome.class);
+            Intent navMenu = new Intent(StuParentHome.this, OwnerProfile.class);
             startActivity(navMenu);
 
         } else if (id == R.id.nav_enter_bookigs) {

@@ -50,6 +50,20 @@
     <string name="request_from_stu_parent_name">Request from stu_parent name</string>
     <string name="request_deatails">Request Deatails</string>
     <string name="booking_details">Booking details</string>
+    <string name="AddboardingButton">Add</string>
+    <string name="addImage">Add Image</string>
+    <string name="dbtext3">Sandun D.K.(id-23)</string>
+    <string name="dbtext">Wijesinghe G.K(id 12)</string>
+    <string name="btndelete">Delete</string>
+    <string name="dbtext4">Ayesh P.K(id-2)</string>
+    <string name="dbtext2">Sadara Q.P.(id-4)</string>
+    <string name="QandA">Q and A</string>
+    <string name="propertymanagement">Property Management</string>
+    <string name="usermanagement">User Management</string>
+    <string name="addboarding">Add Boarding</string>
+    <string name="name">Name</string>
+    <string name="phonenum">Phone Number</string>
+    <string name="protext">Property Management</string>
 
 
     <string-array name="users">

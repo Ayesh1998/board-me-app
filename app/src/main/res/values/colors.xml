@@ -2,11 +2,14 @@
 <resources>
     <color name="colorPrimary">#077AEB</color>
     <color name="colorPrimaryDark">#0C34A5</color>
-    <color name="colorAccent">#45EC08</color>
+    <color name="colorAccent">#EC0858</color>
     <color name="progress">#113B80</color>
-    <color name="price">#4E393A</color>
-    <color name="nav_head">#ACE7E2</color>
-    <color name="nav_lower_part">#7A8383</color>
+    <color name="price">#0C2A31</color>
+    <color name="nav_head">#077AEB</color>
+    <color name="nav_lower_part">#323333</color>
     <color name="pureBlack">#000000</color>
     <color name="book_now_color">#4B4747</color>
+    <color name="nav_menu_color">#ffffff</color>
+    <color name="textColor">#4B4D4D</color>
+    <color name="aboutUs">#B6B2B2</color>
 </resources>

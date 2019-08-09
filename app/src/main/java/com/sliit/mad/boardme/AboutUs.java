@@ -1,5 +1,6 @@
 package com.sliit.mad.boardme;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,17 +12,20 @@ import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class OwnerProfile extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+
+public class AboutUs extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     //drawer
     DrawerLayout drawer;
     ActionBarDrawerToggle drawerToggle;
     //drawer
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_owner_profile);
+        setContentView(R.layout.activity_about_us);
+
 
         //drawer
         drawer = (DrawerLayout) findViewById(R.id.drawer);
@@ -55,7 +59,7 @@ public class OwnerProfile extends AppCompatActivity implements NavigationView.On
         if (id == R.id.nav_enter_profile) {
 
 
-            Intent navMenu = new Intent(OwnerProfile.this, OwnerProfile.class);
+            Intent navMenu = new Intent(AboutUs.this, OwnerProfile.class);
             startActivity(navMenu);
 
         } else if (id == R.id.nav_enter_bookigs) {
@@ -66,12 +70,13 @@ public class OwnerProfile extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_enter_aboutus) {
 
 
-            Intent navMenu = new Intent(OwnerProfile.this, AboutUs.class);
+            Intent navMenu = new Intent(AboutUs.this, AboutUs.class);
             startActivity(navMenu);
         }
 
         return false;
     }
     //drawer
+
 
 }

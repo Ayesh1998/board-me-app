@@ -43,6 +43,8 @@
     <string name="my_boarding_places">My Boarding Places</string>
     <string name="add_a_boarding">Add a Boarding</string>
     <string name="booking_requests">Booking Requests</string>
+    <string name="topic_about_us">About Us</string>
+    <string name="description_about_us">BoardMe has the widest selection of popular boarding places all over Sri Lanka, which makes it easy to find exactly what you are looking for.So if you are looking for a you will find the best deal on BoardMe</string>
 
 
     <string-array name="users">

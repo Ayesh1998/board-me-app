@@ -167,6 +167,7 @@
         android:layout_width="240dp"
         android:layout_height="match_parent"
         app:menu="@menu/nav_menu_list"
+        app:itemTextColor="@color/nav_menu_color"
         android:background="@color/nav_lower_part"
         app:headerLayout="@layout/nav_header"
 

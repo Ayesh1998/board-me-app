@@ -31,7 +31,7 @@
             android:layout_marginLeft="60dp"
             android:layout_marginTop="20dp"
             android:text="@string/textview"
-            android:textColor="#2B3DE6"
+            android:textColor="@color/textColor"
             android:textSize="18sp" />
 
         <TextView
@@ -41,7 +41,7 @@
             android:layout_marginLeft="60dp"
             android:layout_marginTop="10dp"
             android:text="b"
-            android:textColor="#2B3DE6"
+            android:textColor="@color/textColor"
             android:textSize="18sp" />
 
         <TextView
@@ -51,7 +51,7 @@
             android:layout_marginLeft="60dp"
             android:layout_marginTop="10dp"
             android:text="lol"
-            android:textColor="#2B3DE6"
+            android:textColor="@color/textColor"
             android:textSize="18sp" />
 
         <TextView

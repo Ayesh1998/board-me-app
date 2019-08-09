@@ -69,7 +69,7 @@ public class SinglePropertyView extends AppCompatActivity implements NavigationV
                 String propertyImage = (String) dataSnapshot.child("Images").getValue();
 
                 singleBathrooms.setText("Bathrooms : " + propertyBathrooms);
-                singlePrice.setText(propertyPrice);
+                singlePrice.setText("Price : " +propertyPrice + "/=");
                 singleRooms.setText("Rooms : " + propertyRooms);
                 singleTitle.setText(propertyTitle);
                 singleAdress.setText(propertyAddress);

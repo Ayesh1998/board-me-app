@@ -25,13 +25,16 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="177dp"
+            android:layout_height="38dp"
+            android:fontFamily="sans-serif-medium"
             android:text="@string/my_profile"
-            android:textSize="18sp"
+            android:textColor="#323333"
+            android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.111"
+            app:layout_constraintHorizontal_bias="0.198"
             app:layout_constraintStart_toEndOf="@+id/nav_head_image"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />

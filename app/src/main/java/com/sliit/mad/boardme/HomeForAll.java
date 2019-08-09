@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -127,11 +128,11 @@ public class HomeForAll extends AppCompatActivity implements NavigationView.OnNa
 
 //            Intent navMenu2 = new Intent(HomeForAll.this, StuParentPropertySingleView.class);
 //            startActivity(navMenu2);
-        }else if (id == R.id.nav_enter_aboutus) {
+        } else if (id == R.id.nav_enter_aboutus) {
 
 
             Intent navMenu = new Intent(HomeForAll.this, AboutUs.class);
-             startActivity(navMenu);
+            startActivity(navMenu);
         }
 
         return false;

@@ -50,7 +50,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="37dp"
         android:layout_marginEnd="50dp"
-        android:background="@drawable/inputfield"
+       android:background="@drawable/inputfield"
         android:ems="10"
         android:hint="@string/Email"
         android:inputType="textEmailAddress"

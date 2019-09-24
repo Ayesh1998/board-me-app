@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     String email,password11;
     FirebaseAuth fireSignInAuth;
     ProgressBar pr;
+    TextView forgot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +39,18 @@ public class MainActivity extends AppCompatActivity {
         fireSignInAuth = FirebaseAuth.getInstance();
         pr = (ProgressBar) findViewById(R.id.progressBar2) ;
         pr.setVisibility(View.GONE);
+        forgot = findViewById(R.id.forgotPassword);
 
 //    testings
 
 
+        forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goActitviyUpdatePass = new Intent(MainActivity.this, UpdatePasswod.class);
+                startActivity(goActitviyUpdatePass);
+            }
+        });
 
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                                     pr.setVisibility(View.GONE);
                                     Toast.makeText(MainActivity.this, "Login Succefull", Toast.LENGTH_LONG).show();
                                     Intent goActitviyHome = new Intent(MainActivity.this, HomeForAll.class);
+                                    goActitviyHome.putExtra("owners","no");
                                     startActivity(goActitviyHome);
                                 }
                                 else{

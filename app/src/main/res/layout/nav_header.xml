@@ -24,7 +24,7 @@
             android:contentDescription="@string/profile" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/navUserName"
             android:layout_width="177dp"
             android:layout_height="38dp"
             android:fontFamily="sans-serif-medium"

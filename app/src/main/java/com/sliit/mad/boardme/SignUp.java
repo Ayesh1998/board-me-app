@@ -18,20 +18,23 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUp extends AppCompatActivity {
 
     Button btSignUp;
-    EditText et_fname, et_lname, et_email, et_password, et_telephone,et_confirmPas;
+    EditText et_fname, et_lname, et_email, et_password, et_telephone,et_confirmPas,et_address;
     FirebaseDatabase dataBase;
     DatabaseReference dataRef;
-    FirebaseAuth firebaseAuthe;
+
     Spinner sp;
     ProgressBar pgb;
+    FirebaseAuth firebaseAuthe;
+    FirebaseUser firebaseAutheUser;
 
-    String fname,lname,type,pass,email,confPass,tele;
+    String fname,lname,type,pass,email,confPass,tele,address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,7 @@ public class SignUp extends AppCompatActivity {
         et_confirmPas = (EditText) findViewById(R.id.etConfirmPassword);
         et_telephone = (EditText) findViewById(R.id.etTele);
         pgb = (ProgressBar) findViewById(R.id.progressBar1);
+        et_address =  (EditText) findViewById(R.id.etAddress);
 
         pgb.setVisibility(View.GONE);
 
@@ -69,6 +73,7 @@ public class SignUp extends AppCompatActivity {
                  pass = et_password.getText().toString();
                  confPass = et_confirmPas.getText().toString();
                   email = et_email.getText().toString();
+                address = et_address.getText().toString();
                  type =  sp.getSelectedItem().toString();
 
                 if (TextUtils.isEmpty(fname)){
@@ -126,7 +131,8 @@ public class SignUp extends AppCompatActivity {
                                             fname,
                                             lname,
                                             email,
-                                            tele
+                                            tele,
+                                            address
                                     );
 
                                     FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).

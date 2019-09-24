@@ -12,4 +12,5 @@
     <color name="nav_menu_color">#ffffff</color>
     <color name="textColor">#4B4D4D</color>
     <color name="aboutUs">#B6B2B2</color>
+    <color name="white">#F8F8F8</color>
 </resources>

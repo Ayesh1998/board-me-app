@@ -21,22 +21,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="@string/request_from_stu_parent_name"
+        android:text="@string/request"
         android:textAlignment="center"
-        android:textSize="25sp"
+        android:textSize="22sp"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/editText"
+    <TextView
+        android:id="@+id/ownerViewReqAdvance"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/pureBlack"
+        android:paddingTop="8dp"
+        android:textSize="18sp"
+        android:background="@drawable/inputfield"
+        android:paddingLeft="10dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/ownerRequestDescription"
         android:layout_width="match_parent"
         android:layout_height="184dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/inputfield"
+        android:paddingTop="10dp"
+        android:textColor="@color/pureBlack"
+        android:textSize="18sp"
         android:ems="10"
-        android:hint="@string/request_deatails"
-        android:inputType="textPersonName"
+        android:text="Description"
+        android:inputType="textMultiLine"
         android:paddingLeft="10dp"
         android:paddingBottom="120dp"
         android:textAlignment="textStart" />

@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".OwnerViewRequest"></activity>
+        <activity android:name=".UpdatePasswod"></activity>
+        <activity android:name=".UpdateUserDetails" />
+        <activity android:name=".OwnerViewRequest" />
         <activity android:name=".AboutUs" />
         <activity android:name=".OwnerProfile" />
         <activity android:name=".BookNow" />
@@ -19,6 +21,7 @@
         <activity android:name=".SinglePropertyView" />
         <activity android:name=".HomeForAll" />
         <activity android:name=".VerifySignUp" />
+        <activity android:name=".StuParentHome" />
         <activity android:name=".SignUp" />
         <activity android:name=".MainActivity">
             <intent-filter>

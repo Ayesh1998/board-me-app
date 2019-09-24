@@ -29,21 +29,21 @@
             android:background="@drawable/profile_header">
 
             <ImageView
-                android:id="@+id/image"
+                android:id="@+id/ownerProfileimage"
                 android:layout_width="81dp"
                 android:layout_height="62dp"
                 android:layout_marginEnd="13dp"
                 android:contentDescription="@string/profilephoto"
                 android:src="@drawable/ic_account_circle"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/tvstudentname"
+                app:layout_constraintEnd_toStartOf="@+id/ownerProfiletvstudentname"
                 app:layout_constraintHorizontal_bias="0.285"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.49" />
 
             <TextView
-                android:id="@+id/tvstudentname"
+                android:id="@+id/ownerProfiletvstudentname"
                 android:layout_width="match_parent"
                 android:layout_height="29dp"
                 android:layout_marginStart="150dp"
@@ -59,7 +59,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tvstudent-prof"
+                android:id="@+id/ownerProfiletvstudentLastname"
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
                 android:layout_marginStart="150dp"
@@ -72,7 +72,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvstudentname" />
+                app:layout_constraintTop_toBottomOf="@+id/ownerProfiletvstudentname" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -83,7 +83,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/email"
+            android:id="@+id/ownerProfileemail"
             android:layout_width="217dp"
             android:layout_height="28dp"
             android:layout_marginStart="18dp"
@@ -94,11 +94,11 @@
             android:textColor="@color/textColor"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tvemail"
+            app:layout_constraintStart_toEndOf="@+id/ownerProfiletvemail"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tele"
+            android:id="@+id/ownerProfiletele"
             android:layout_width="217dp"
             android:layout_height="28dp"
             android:layout_marginStart="18dp"
@@ -109,11 +109,11 @@
             android:textStyle="bold"
             android:textColor="@color/textColor"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tvtele"
-            app:layout_constraintTop_toBottomOf="@+id/email" />
+            app:layout_constraintStart_toEndOf="@+id/ownerProfiletvtele"
+            app:layout_constraintTop_toBottomOf="@+id/ownerProfileemail" />
 
         <TextView
-            android:id="@+id/address"
+            android:id="@+id/ownerProfileaddress"
             android:layout_width="217dp"
             android:layout_height="28dp"
             android:layout_marginStart="18dp"
@@ -124,11 +124,11 @@
             android:textStyle="bold"
             android:textColor="@color/textColor"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tvaddress"
-            app:layout_constraintTop_toBottomOf="@+id/tele" />
+            app:layout_constraintStart_toEndOf="@+id/ownerProfiletvaddress"
+            app:layout_constraintTop_toBottomOf="@+id/ownerProfiletele" />
 
         <TextView
-            android:id="@+id/tvtele"
+            android:id="@+id/ownerProfiletvtele"
             android:layout_width="136dp"
             android:layout_height="30dp"
             android:layout_marginStart="16dp"
@@ -138,10 +138,10 @@
             android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvemail" />
+            app:layout_constraintTop_toBottomOf="@+id/ownerProfiletvemail" />
 
         <TextView
-            android:id="@+id/tvemail"
+            android:id="@+id/ownerProfiletvemail"
             android:layout_width="136dp"
             android:layout_height="30dp"
             android:layout_marginStart="16dp"
@@ -154,7 +154,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvaddress"
+            android:id="@+id/ownerProfiletvaddress"
             android:layout_width="136dp"
             android:layout_height="30dp"
             android:layout_marginStart="16dp"
@@ -164,25 +164,25 @@
             android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvtele" />
+            app:layout_constraintTop_toBottomOf="@+id/ownerProfiletvtele" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/ownerProfIvUpdate"
             android:layout_width="56dp"
             android:layout_height="44dp"
             android:layout_marginStart="150dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:clickable="true"
-            app:layout_constraintBottom_toTopOf="@+id/btMyBoardingPlaces"
+            app:layout_constraintBottom_toTopOf="@+id/ownerProfilebtMyBoardingPlaces"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/tvaddress"
+            app:layout_constraintStart_toEndOf="@+id/ownerProfiletvaddress"
             app:srcCompat="@drawable/ic_edit_profile"
             tools:ignore="VectorDrawableCompat" />
 
         <Button
-            android:id="@+id/btMyBoardingPlaces"
+            android:id="@+id/ownerProfilebtMyBoardingPlaces"
             android:layout_width="match_parent"
             android:layout_height="41dp"
             android:layout_marginTop="63dp"
@@ -195,10 +195,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/address" />
+            app:layout_constraintTop_toBottomOf="@+id/ownerProfileaddress" />
 
         <Button
-            android:id="@+id/btBooking"
+            android:id="@+id/ownerProfilebtBookingRequs"
             android:layout_width="match_parent"
             android:layout_height="41dp"
             android:layout_marginTop="60dp"
@@ -210,10 +210,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/btAddBoarding" />
+            app:layout_constraintTop_toTopOf="@+id/ownerProfilebtAddBoarding" />
 
         <Button
-            android:id="@+id/btAddBoarding"
+            android:id="@+id/ownerProfilebtAddBoarding"
             android:layout_width="match_parent"
             android:layout_height="41dp"
             android:layout_marginTop="60dp"
@@ -225,7 +225,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/btMyBoardingPlaces" />
+            app:layout_constraintTop_toTopOf="@+id/ownerProfilebtMyBoardingPlaces" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

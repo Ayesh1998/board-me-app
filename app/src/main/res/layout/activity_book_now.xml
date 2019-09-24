@@ -41,8 +41,8 @@
         android:hint="@string/advance"
         android:inputType="textPersonName"
         android:padding="10dp"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textSize="18sp"
+         />
 
     <EditText
         android:id="@+id/ptDescription"
@@ -51,19 +51,21 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/inputfield"
         android:ems="10"
         android:hint="@string/description"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
         android:paddingLeft="10dp"
         android:paddingBottom="100dp"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textSize="18sp"
+         />
 
     <ProgressBar
         android:id="@+id/bookProgressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="match_parent"
+        android:layout_marginBottom="100dp"
         android:layout_height="wrap_content"
         android:indeterminateTint="@color/progress" />
 
@@ -71,7 +73,7 @@
         android:id="@+id/btnbooknow"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="110dp"
+        android:layout_marginLeft="100dp"
         android:layout_marginRight="100dp"
         android:background="@drawable/button"
         android:gravity="center_horizontal"

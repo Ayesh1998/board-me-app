@@ -2,18 +2,19 @@ package com.sliit.mad.boardme;
 
 public class Properties {
 
-    private String Title,Rooms,Bathrooms,Price,Images;
+    private String Title,Rooms,Bathrooms,Price,Images,ownerID;
 
     public Properties(){
 
     }
 
-    public Properties(String title, String rooms, String bathrooms, String price, String images) {
+    public Properties(String title, String rooms, String bathrooms, String price, String images,String ownerIDs) {
         Title = title;
         Rooms = rooms;
         Bathrooms = bathrooms;
         Price = price;
         Images=images;
+        ownerID = ownerIDs;
     }
 
     public String getImages() {
@@ -22,6 +23,14 @@ public class Properties {
 
     public void setImages(String images) {
         Images = images;
+    }
+
+    public String getOwnerid() {
+        return ownerID;
+    }
+
+    public void setOwnerid(String ownerID) {
+        this.ownerID = ownerID;
     }
 
     public String getTitle() {

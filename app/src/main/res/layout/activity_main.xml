@@ -46,7 +46,7 @@
     <EditText
         android:id="@+id/etEmailSignIN"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="40dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="37dp"
         android:layout_marginEnd="50dp"
@@ -56,7 +56,7 @@
         android:inputType="textEmailAddress"
         android:padding="10dp"
         android:textAlignment="textStart"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +65,7 @@
     <EditText
         android:id="@+id/etPasswordSignIn"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="40dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="50dp"
@@ -75,7 +75,7 @@
         android:inputType="textPassword"
         android:padding="10dp"
         android:textAlignment="textStart"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -84,15 +84,15 @@
 
     <Button
         android:id="@+id/btSignin"
-        android:layout_width="186dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="29dp"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/button"
-        android:padding="10dp"
         android:text="@string/SignIn"
         android:textColor="#E9D5D5"
-        android:textSize="21sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPasswordSignIn" />
 
@@ -100,8 +100,8 @@
         android:id="@+id/tvNeedAccount"
         android:layout_width="138dp"
         android:layout_height="32dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="72dp"
         android:text="@string/Needanaccount"
         android:textAlignment="center"
         android:textColor="#E1FCFBFB"
@@ -112,17 +112,18 @@
 
     <Button
         android:id="@+id/bSignUp"
-        android:layout_width="186dp"
-        android:layout_height="50dp"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/button"
-        android:padding="10dp"
+
         android:text="@string/SignUp"
         android:textColor="#E9D5D5"
-        android:textSize="21sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toEndOf="@+id/tvNeedAccount"
         app:layout_constraintTop_toBottomOf="@+id/btSignin" />
 
@@ -137,5 +138,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etEmailSignIN"
         android:indeterminateTint="@color/progress"/>
+
+    <TextView
+        android:id="@+id/forgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_marginLeft="123dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="100dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/forgot_password"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btSignin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

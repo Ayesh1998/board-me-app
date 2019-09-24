@@ -8,6 +8,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -93,6 +94,14 @@ public class StuParentPropertySingleView extends AppCompatActivity implements Na
             }
         });
 
+        studentSingleBooking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goBookNow= new Intent(StuParentPropertySingleView.this, BookNow.class);
+                goBookNow.putExtra("propertyID",propertyKey);
+                startActivity(goBookNow);
+            }
+        });
 
     }
 

@@ -24,6 +24,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class BookNow extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -35,12 +39,13 @@ public class BookNow extends AppCompatActivity implements NavigationView.OnNavig
     Button btBookNow;
     EditText et_advance, et_descriptionj;
     FirebaseDatabase dataBase;
-    DatabaseReference dataRef;
-    FirebaseAuth firebaseAuthe;
+
+    FirebaseAuth ffAuth;
+    DatabaseReference db;
     ProgressBar pgb;
 //    Spinner sp;
 
-    String advance,description;
+    String advance,description,propertyIDs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,96 +57,61 @@ public class BookNow extends AppCompatActivity implements NavigationView.OnNavig
         et_advance = (EditText) findViewById(R.id.ptadvance);
         et_descriptionj = (EditText) findViewById(R.id.ptDescription);
         pgb = (ProgressBar) findViewById(R.id.bookProgressBar);
+        propertyIDs = getIntent().getExtras().getString("propertyID");
 
 
         pgb.setVisibility(View.GONE);
 
-        dataRef = FirebaseDatabase.getInstance().getReference("Booking");
-        firebaseAuthe = FirebaseAuth.getInstance();
+        ffAuth = FirebaseAuth.getInstance();
+        db = FirebaseDatabase.getInstance().getReference().child("Bookings").child(ffAuth.getCurrentUser().getUid());
 
-//        ArrayAdapter<String> userAdapter = new ArrayAdapter<String>(BookNow.this, android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.users));
-//        userAdapter.setDropDownViewResource(android.R.layout.simple_expandable_list_item_1);
-//        sp.setAdapter(userAdapter);
 
         btBookNow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+                                         @Override
+                                         public void onClick(View view) {
 
-                advance = et_advance.getText().toString();
-                description = et_descriptionj.getText().toString();
+                                             advance = et_advance.getText().toString();
+                                             description = et_descriptionj.getText().toString();
+                                             String status = "Pending";
+                                             String propertyID = propertyIDs;
+                                             String user = ffAuth.getCurrentUser().getUid();
 
-                if (TextUtils.isEmpty(advance)){
-                    Toast.makeText(BookNow.this, "Enter Advance", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+                                             DatabaseReference db2 = db.push();
 
-                if (TextUtils.isEmpty(description)){
-                    Toast.makeText(BookNow.this, "Enter Description", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+                                             if (((TextUtils.isEmpty(advance)) && (TextUtils.isEmpty(description)))) {
+                                                 Toast.makeText(BookNow.this, "Fill Empty Fields", Toast.LENGTH_SHORT).show();
+                                                 return;
+                                             } else {
 
-                  pgb.setVisibility(View.VISIBLE);
+                                                 Map bookingMapping = new HashMap();
+                                                 bookingMapping.put("advance", advance);
+                                                 bookingMapping.put("propertyID", propertyID);
+                                                 bookingMapping.put("description", description);
+                                                 bookingMapping.put("status", status);
+                                                 bookingMapping.put("user", user);
+                                                 bookingMapping.put("time", ServerValue.TIMESTAMP);
 
-//                firebaseAuthe.createUserWithEmailAndPassword(email, pass)
-//                        .addOnCompleteListener(SignUp.this, new OnCompleteListener<AuthResult>() {
-//                            @Override
-//                            public void onComplete(@NonNull Task<AuthResult> task) {
-//                                if (task.isSuccessful()) {
-//
-//                                    Users user = new Users(
-//                                            type,
-//                                            fname,
-//                                            lname,
-//                                            email,
-//                                            tele
-//                                    );
-//
-//                                    FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).
-//                                            setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                        @Override
-//                                        public void onComplete(@NonNull Task<Void> task) {
-//
-//                                            pgb.setVisibility(View.GONE);
-//
-//                                            firebaseAuthe.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                                @Override
-//                                                public void onComplete(@NonNull Task<Void> task) {
-//
-//                                                    if ( !(task.isSuccessful())){
-//                                                        Toast.makeText(SignUp.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-//                                                    }
-//                                                    else{
-//                                                        Toast.makeText(SignUp.this, "Registration Successfull and Email Verification Sent", Toast.LENGTH_LONG).show();
-//                                                        Intent goActitviyVerify = new Intent(SignUp.this, VerifySignUp.class);
-//                                                        startActivity(goActitviyVerify);
-//                                                    }
-//
-//                                                }
-//                                            });
-//
-//
-//
-//
-//
-//                                        }
-//                                    });
-//
-//                                } else {
-//                                    pgb.setVisibility(View.GONE);
-//                                    Toast.makeText(SignUp.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-//
-//                                }
-//
-//                                // ...
-//                            }
-//                        });
+                                                 db2.setValue(bookingMapping).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                     @Override
+                                                     public void onComplete(@NonNull Task<Void> task) {
+                                                         if (task.isSuccessful()) {
+                                                             Intent ins = new Intent(BookNow.this,StuParentPropertySingleView.class);
+                                                            ins.putExtra("keyValue",propertyIDs) ;
+                                                            startActivity(ins);
+                                                             Toast.makeText(BookNow.this, "Booking added successfully", Toast.LENGTH_SHORT).show();
+                                                         } else {
+                                                             Toast.makeText(BookNow.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                                         }
+                                                     }
+                                                 });
+
+
+                                             }
+                                         }
+                                         });
 
 
 
-
-
-            }
-        });
 
 
 

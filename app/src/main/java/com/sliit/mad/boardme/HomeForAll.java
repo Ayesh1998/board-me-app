@@ -20,8 +20,13 @@ import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 public class HomeForAll extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -32,6 +37,12 @@ public class HomeForAll extends AppCompatActivity implements NavigationView.OnNa
     //drawer
 
     RecyclerView boardingList;
+    DatabaseReference dataRef;
+    FirebaseAuth firebaseAuthe;
+    FirebaseUser firebaseAutheUser;
+    String types,owners="no",id;
+    Intent intent;
+
 
     DatabaseReference proprtiesReferance;
 
@@ -39,6 +50,10 @@ public class HomeForAll extends AppCompatActivity implements NavigationView.OnNa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_for_all);
+
+         intent = getIntent();
+
+        owners = intent.getStringExtra("owners");
 
         //drawer
         drawer = (DrawerLayout) findViewById(R.id.drawer);
@@ -51,6 +66,24 @@ public class HomeForAll extends AppCompatActivity implements NavigationView.OnNa
         navigationView.setNavigationItemSelectedListener(this);
 
         //drawer
+
+
+        firebaseAuthe = FirebaseAuth.getInstance();
+        firebaseAutheUser = firebaseAuthe.getCurrentUser();
+        dataRef = FirebaseDatabase.getInstance().getReference("Users").child(firebaseAutheUser.getUid());
+
+        dataRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                types = (String) dataSnapshot.child("type").getValue();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 
         proprtiesReferance = FirebaseDatabase.getInstance().getReference().child("Properties");
@@ -68,38 +101,82 @@ public class HomeForAll extends AppCompatActivity implements NavigationView.OnNa
     protected void onStart() {
         super.onStart();
 
-        FirebaseRecyclerAdapter<Properties, PropertyHolder1> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Properties, PropertyHolder1>
-                (Properties.class, R.layout.home_row, PropertyHolder1.class, proprtiesReferance) {
 
-            String property_key;
+        if(owners.equals("yes")){
 
-            @Override
-            protected void populateViewHolder(PropertyHolder1 propertyHolder1, Properties properties, int i) {
+            FirebaseRecyclerAdapter<Properties, PropertyHolder1> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Properties, PropertyHolder1>
+                    (Properties.class, R.layout.home_row, PropertyHolder1.class, proprtiesReferance) {
 
-                property_key = getRef(i).getKey();
+                String property_key;
 
-                propertyHolder1.setTitle(properties.getTitle());
-                propertyHolder1.setBathrooms(properties.getBathrooms());
-                propertyHolder1.setPrice(properties.getPrice());
-                propertyHolder1.setRooms(properties.getRooms());
-                propertyHolder1.setImages(getApplicationContext(), properties.getImages());
 
-                propertyHolder1.mView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
+                @Override
+                protected void populateViewHolder(PropertyHolder1 propertyHolder1, Properties properties, int i) {
+
+                    property_key = getRef(i).getKey();
+
+
+                    if((properties.getOwnerid()).equals("1")){
+
+                        propertyHolder1.setTitle(properties.getTitle());
+                        propertyHolder1.setBathrooms(properties.getBathrooms());
+                        propertyHolder1.setPrice(properties.getPrice());
+                        propertyHolder1.setRooms(properties.getRooms());
+                        propertyHolder1.setImages(getApplicationContext(), properties.getImages());
+
+                        propertyHolder1.mView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
 //                       Toast.makeText(HomeForAll.this, property_key, Toast.LENGTH_SHORT).show();
 
-                        Intent sigleProperty = new Intent(HomeForAll.this, SinglePropertyView.class);
-                        sigleProperty.putExtra("keyValue", property_key);
-                        startActivity(sigleProperty);
+                                Intent sigleProperty = new Intent(HomeForAll.this, SinglePropertyView.class);
+                                sigleProperty.putExtra("keyValue", property_key);
+                                startActivity(sigleProperty);
+                            }
+                        });
                     }
-                });
 
-            }
-        };
 
-        boardingList.setAdapter(firebaseRecyclerAdapter);
 
+                }
+            };
+
+            boardingList.setAdapter(firebaseRecyclerAdapter);
+
+        }
+        else {
+            FirebaseRecyclerAdapter<Properties, PropertyHolder1> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Properties, PropertyHolder1>
+                    (Properties.class, R.layout.home_row, PropertyHolder1.class, proprtiesReferance) {
+
+                String property_key;
+
+                @Override
+                protected void populateViewHolder(PropertyHolder1 propertyHolder1, Properties properties, int i) {
+
+                    property_key = getRef(i).getKey();
+
+                    propertyHolder1.setTitle(properties.getTitle());
+                    propertyHolder1.setBathrooms(properties.getBathrooms());
+                    propertyHolder1.setPrice(properties.getPrice());
+                    propertyHolder1.setRooms(properties.getRooms());
+                    propertyHolder1.setImages(getApplicationContext(), properties.getImages());
+
+                    propertyHolder1.mView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+//                       Toast.makeText(HomeForAll.this, property_key, Toast.LENGTH_SHORT).show();
+
+                            Intent sigleProperty = new Intent(HomeForAll.this, StuParentPropertySingleView.class);
+                            sigleProperty.putExtra("keyValue", property_key);
+                            startActivity(sigleProperty);
+                        }
+                    });
+
+                }
+            };
+
+            boardingList.setAdapter(firebaseRecyclerAdapter);
+        }
 
     }
 
@@ -119,25 +196,41 @@ public class HomeForAll extends AppCompatActivity implements NavigationView.OnNa
 
         if (id == R.id.nav_enter_profile) {
 
+            if (types.equals("Owner")){
+                Intent navMenu = new Intent(HomeForAll.this, OwnerProfile.class);
+                startActivity(navMenu);
+            }
+            else{
+                Intent navMenu = new Intent(HomeForAll.this, StuParentHome.class);
+                startActivity(navMenu);
+            }
 
-            Intent navMenu = new Intent(HomeForAll.this, OwnerProfile.class);
-            startActivity(navMenu);
+
 
         } else if (id == R.id.nav_enter_bookigs) {
 
 
-            Intent navMenu2 = new Intent(HomeForAll.this, OwnerViewRequest.class);
+            Intent navMenu2 = new Intent(HomeForAll.this, BookNow.class);
             startActivity(navMenu2);
 
         } else if (id == R.id.nav_enter_aboutus) {
 
 
-            Intent navMenu = new Intent(HomeForAll.this, AboutUs.class);
+            Intent navMenu = new Intent(HomeForAll.this, OwnerViewRequest.class);
+            startActivity(navMenu);
+        } else if (id == R.id.nav_logOut) {
+
+            FirebaseAuth.getInstance().signOut();
+            finish();
+
+            Intent navMenu = new Intent(HomeForAll.this, MainActivity.class);
             startActivity(navMenu);
         }
 
         return false;
     }
+
+
     //drawer
 
 }

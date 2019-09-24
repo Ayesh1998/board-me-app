@@ -50,9 +50,16 @@
     <string name="request_from_stu_parent_name">Request from stu_parent name</string>
     <string name="request_deatails">Request Deatails</string>
     <string name="booking_details">Booking details</string>
+    <string name="request">Request</string>
+    <string name="update_password">Update Password</string>
+    <string name="update">Update</string>
+    <string name="forgot_password">Forgot Password??</string>
+    <string name="reset">Reset</string>
+
 
 
     <string-array name="users">
+        <item>Select user type</item>
         <item>Parent</item>
         <item>Student</item>
         <item>Owner</item>
